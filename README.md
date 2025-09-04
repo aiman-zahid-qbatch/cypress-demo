@@ -1,51 +1,94 @@
-# Cypress Demo Project
 
-This is a Cypress automation project for Sauce Demo E2E flows including Sign In, Add to Cart, Checkout, and Logout. It uses **Mochawesome** reporter for generating HTML reports with screenshots and videos.
+# Cypress Demo Test Project
 
----
+This project contains end-to-end (E2E) automated tests for a demo web application using [Cypress](https://www.cypress.io/). The tests cover core user flows such as sign in, add to cart, checkout, and logout.
 
-## Setup Instructions
+## Project Structure
 
-### 1. Clone the Repository
+```
+cypress-demo-demo-tests/
+├── cypress.config.js         # Cypress configuration file
+├── package.json             # Project dependencies and scripts
+├── cypress/
+│   ├── downloads/           # Downloaded files during tests
+│   ├── e2e/                 # E2E test specifications
+│   ├── fixtures/            # Test data (JSON)
+│   ├── reports/             # Test reports and videos
+│   ├── screenshots/         # Screenshots taken during test runs
+│   ├── support/             # Custom commands and support files
+│   └── videos/              # Test run videos
+└── README.md                # Project documentation
+```
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v14 or higher recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+
+### Installation
+
+1. Clone the repository:
+	```bash
+	git clone <repository-url>
+	cd cypress-demo-demo-tests
+	```
+2. Install dependencies:
+	```bash
+	npm install
+	```
+
+### Running Tests
+
+To run all E2E tests in headless mode:
+
 ```bash
-git clone https://github.com/aiman-zahid-qbatch/cypress-demo.git
-cd cypress-demo
-2. Install Dependencies
-bash
-Copy code
-npm install
-3. Open Cypress Test Runner
-bash
-Copy code
+npx cypress run
+```
+
+To open the Cypress Test Runner (interactive mode):
+
+```bash
 npx cypress open
-This will open the Cypress GUI where you can run tests interactively.
+```
 
-4. Run Tests in Headless Mode and Generate Report
-bash
-Copy code
-npm run report
-This will run all tests in Chrome headless and generate Mochawesome reports in cypress/reports.
+```bash
+npm run cypress:run
+```
 
-5. Open the HTML Report
-bash
-Copy code
-npm run postreport
-Opens the Mochawesome HTML report in your default browser, including screenshots and videos.
 
-Project Structure
+```bash
+npm run test:report
+```
 
-cypress/e2e/ - Contains all test files:
 
-signin.cy.js
+```bash
+npm run open-report
+```
 
-add_to_cart.cy.js
+Test results, screenshots, and videos will be saved in the `cypress/reports/`, `cypress/screenshots/`, and `cypress/videos/` directories respectively.
 
-checkout.cy.js
+## Test Files
 
-logout.cy.js
+- `cypress/e2e/signin.cy.js` - Sign in flow tests
+- `cypress/e2e/add_to_cart.cy.js` - Add to cart flow tests
+- `cypress/e2e/checkout.cy.js` - Checkout flow tests
+- `cypress/e2e/logout.cy.js` - Logout flow tests
 
-cypress/reports/ - Generated Mochawesome reports (HTML + JSON)
+## Custom Commands & Support
 
-cypress/screenshots/ - Screenshots captured after each test
+Custom Cypress commands are defined in `cypress/support/commands.js`.
+Global configuration and behavior is set in `cypress/support/e2e.js`.
 
-cypress/videos/ - Videos recorded during test execution
+## Fixtures
+
+Test data is stored in `cypress/fixtures/example.json` and can be used in your tests via the `cy.fixture()` command.
+
+## Reports
+
+Test reports and videos are generated in the `cypress/reports/` directory after running tests.
+
+## License
+
+This project is for demonstration and educational purposes.

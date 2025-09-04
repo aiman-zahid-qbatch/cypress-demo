@@ -4,15 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1",
-  "open": "cypress open",
-  "run:headless": "cypress run --browser chrome",
-  "clean-reports": "rm -rf cypress/reports/*",
-  "report": "cypress run --browser chrome --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,html=false,json=true,embeddedScreenshots=true,inlineAssets=true",
-  "merge-report": "npx mochawesome-merge cypress/reports/*.json > cypress/reports/merged.json",
-  "html-report": "npx mochawesome-report-generator cypress/reports/merged.json --reportDir=cypress/reports/html --inline --charts --code --reportTitle 'Cypress E2E Test Report' --reportFilename index",
-  "open-report": "open cypress/reports/html/index.html"
-},
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "open": "cypress open",
+    "run:headless": "cypress run --browser chrome",
+    "clean-reports": "rm -rf cypress/reports/*",
+    "cypress:run": "cypress run --browser chrome",
+    "test:report": "npm run clean-reports && npm run cypress:run",
+    "open-report": "open cypress/reports/index.html"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aiman-zahid-qbatch/cypress-demo.git"

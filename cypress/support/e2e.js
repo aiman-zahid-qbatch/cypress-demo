@@ -14,10 +14,7 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+import './commands'
 
-import "./commands";
-import "cypress-mochawesome-reporter/register";
-
-afterEach(() => {
-  cy.screenshot({ capture: "runner" });
-});
+// Import cypress-mochawesome-reporter for enhanced reporting
+import 'cypress-mochawesome-reporter/register'
