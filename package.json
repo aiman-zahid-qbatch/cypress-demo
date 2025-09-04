@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "open": "cypress open",
+    "run:headless": "cypress run --browser chrome",
+    "report": "cypress run --browser chrome --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,html=true,json=true",
+    "postreport": "open cypress/reports/mochawesome.html"
   },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aiman-zahid-qbatch/cypress-demo.git"
@@ -19,6 +24,7 @@
   "homepage": "https://github.com/aiman-zahid-qbatch/cypress-demo#readme",
   "devDependencies": {
     "cypress": "^15.1.0",
-    "cypress-mochawesome-reporter": "^4.0.2"
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "mochawesome": "^7.1.3"
   }
 }

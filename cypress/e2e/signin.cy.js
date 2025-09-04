@@ -19,7 +19,10 @@ describe('SauceDemo Sign In Flow', () => {
     cy.visit(LOGIN_CONFIG.URL, { failOnStatusCode: false });
     cy.get(LOGIN_CONFIG.SELECTORS.usernameInput, { timeout: 10000 }).should('be.visible');
   });
-
+// ✅ take screenshot after each test
+  afterEach(() => {
+    cy.screenshot({ capture: "runner" });
+  });
   it('Should login successfully with valid credentials', () => {
     cy.loginAs('standardUser');
     cy.url().should('include', '/inventory.html');
