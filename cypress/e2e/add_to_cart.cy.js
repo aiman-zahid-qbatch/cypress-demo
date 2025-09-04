@@ -13,7 +13,7 @@ describe('SauceDemo Add to Cart Flow', () => {
       addToCartButton: '[data-test="add-to-cart-sauce-labs-backpack"]',
       cartBadge: '[data-test="shopping-cart-badge"]',
       continueShoppingButton: '[data-test="continue-shopping"]',
-    },
+    }
   };
 
   beforeEach(() => {
